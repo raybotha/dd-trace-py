@@ -46,6 +46,7 @@ class MongoEngineCore(object):
         eq_(span.service, self.TEST_SERVICE)
         _assert_timing(span, start, end)
 
+
         start = end
         joni = Artist()
         joni.first_name = 'Joni'
