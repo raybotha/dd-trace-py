@@ -146,7 +146,7 @@ jobs:
       - restore_cache:
           keys:
               - tox-cache-ddtracerun-{{ checksum "tox.ini" }}
-      - run: tox -e '{py27,py34,py35,py36}-ddtracerun' --result-json /tmp/ddtracerun.results
+      - run: TOX_SKIP_DIST=False; tox --recreate -e '{py27,py34,py35,py36}-ddtracerun' --result-json /tmp/ddtracerun.results
       - persist_to_workspace:
           root: /tmp
           paths:
