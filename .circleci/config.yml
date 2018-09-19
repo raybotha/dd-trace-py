@@ -360,10 +360,10 @@ jobs:
               - tox-cache-django-{{ checksum "tox.ini" }}
       - run: tox -e 'django_contrib-{py27,py34,py35,py36}-django{18,111}-djangopylibmc06-djangoredis45-pylibmc-redis{210}-memcached' --result-json /tmp/django.1.results
       - run: TOX_SKIP_DIST=False tox -e 'django_contrib_autopatch-{py27,py34,py35,py36}-django{18,111}-djangopylibmc06-djangoredis45-pylibmc-redis{210}-memcached' --result-json /tmp/django.2.results
-      - run: tox -e 'django_drf_contrib-{py27,py34,py35,py36}-djangorestframework{34,37,38}' --result-json /tmp/django.3.results
+      - run: tox -e 'django_drf_contrib-{py27,py34,py35,py36}-django{111}-djangorestframework{34,37,38}' --result-json /tmp/django.3.results
       - run: tox -e 'django_contrib-{py34,py35,py36}-django{200}-djangopylibmc06-djangoredis45-pylibmc-redis{210}-memcached' --result-json /tmp/django.4.results
       - run: TOX_SKIP_DIST=False tox -e 'django_contrib_autopatch-{py34,py35,py36}-django{200}-djangopylibmc06-djangoredis45-pylibmc-redis{210}-memcached' --result-json /tmp/django.5.results
-      - run: tox -e 'django_drf_contrib-{py34,py35,py36}-djangorestframework{37,38}' --result-json /tmp/django.6.results
+      - run: tox -e 'django_drf_contrib-{py34,py35,py36}-django{200}-djangorestframework{37,38}' --result-json /tmp/django.6.results
       - persist_to_workspace:
           root: /tmp
           paths:
